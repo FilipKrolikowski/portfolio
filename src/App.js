@@ -33,8 +33,8 @@ const projects = [
     name: "Todo App",
     desc: "Simple app to create your to-do list",
     image: Project2Image,
-    live: "https://fifi-todo-app.netlify.app/",
-    code: "https://github.com/FilipKrolikowski/todo-app",
+    live: "https://filipkrolikowski.github.io/todo-list-app/",
+    code: "https://github.com/FilipKrolikowski/todo-list-app",
   },
 ];
 
