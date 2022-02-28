@@ -102,6 +102,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [animateHeader, setAnimateHeader] = useState(false);
   const [showNav, setShowNav] = useState(false);
+  const [isContentLoaded, setIsContentLoaded] = useState(false);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -136,7 +137,7 @@ function App() {
       "0 0 40px 20px #fff, 0 0 100px 50px #0ff",
     ];
 
-    const numBalls = 100;
+    const numBalls = 130;
     const balls = [];
 
     for (let i = 0; i < numBalls; i++) {
@@ -151,7 +152,7 @@ function App() {
       ball.style.height = ball.style.width;
 
       balls.push(ball);
-      document.querySelector(".header").append(ball);
+      document.querySelector(".background-video-container").append(ball);
     }
 
     balls.forEach((el, i, ra) => {
@@ -197,9 +198,13 @@ function App() {
 
   useEffect(() => {
     balls();
-    setTimeout(() => {
-      setAnimateHeader(true);
-    }, 300);
+    window.onload = () => {
+      setIsContentLoaded(true);
+      document.body.style.overflowY = "auto";
+      setTimeout(() => {
+        setAnimateHeader(true);
+      }, 1300);
+    };
     window.addEventListener("scroll", animate);
   }, []);
 
@@ -213,144 +218,169 @@ function App() {
   }, [showNav]);
 
   return (
-    <div className="portfolio">
-      <div
-        onClick={() => setShowNav(true)}
-        className={`hamburger-btn-container d-block d-lg-none ${showNav ? "invisible" : "visible"}`}
-      >
-        <img src={hamburgerIcon} alt="" className="hamburger-btn" />
-      </div>
-      <Modal show={showModal} size="lg" centered onHide={handleClose}>
-        <Modal.Header className="border-0 pb-0 portfolio-modal" closeButton></Modal.Header>
-        <Modal.Body className="portfolio-modal">
-          <div className="portfolio-modal-content text-center w-100">
-            Thank you for contacting, I will answer as soon as possible! :)
+    <>
+      <div>
+        <div
+          className={`spinner text-center d-flex align-items-center justify-content-center ${
+            isContentLoaded ? "hide-loading" : "show-loading"
+          }`}
+        >
+          <div>
+            <p>l</p>
+            <p>o</p>
+            <p>a</p>
+            <p>d</p>
+            <p>i</p>
+            <p>n</p>
+            <p>g</p>
           </div>
-        </Modal.Body>
-        <Modal.Footer className="border-0 portfolio-modal"></Modal.Footer>
-      </Modal>
-      <div className={`side-nav d-flex flex-column ${showNav ? "show-side-nav" : "hide-side-nav"}`}>
-        <span className="close-btn ms-auto" onClick={() => setShowNav(false)}>
-          &#x2715;
-        </span>
-        {sections.map((section) => (
-          <div key={section.name} className="my-4 nav-link-container">
-            <a className="text-decoration-none side-nav-link" href={section.href} onClick={() => setShowNav(false)}>
-              {section.name}
-            </a>
-            <div className="side-nav-border"></div>
-          </div>
-        ))}
+        </div>
       </div>
-      <div className="header">
-        <div className="background-video-container"></div>
-        <div className="video-overlay"></div>
-        <div className={`text-container text-uppercase text-nowrap ${animateHeader ? "show-header" : "hide-header"}`}>
-          <div className="title">
-            front-end <br /> developer
-            <div className="small-title">
-              front end <br /> developer
+      <div className="portfolio">
+        <div
+          onClick={() => setShowNav(true)}
+          className={`hamburger-btn-container d-block d-lg-none ${showNav ? "invisible" : "visible"}`}
+        >
+          <img src={hamburgerIcon} alt="" className="hamburger-btn" />
+        </div>
+        <Modal show={showModal} size="lg" centered onHide={handleClose}>
+          <Modal.Header className="border-0 pb-0 portfolio-modal" closeButton></Modal.Header>
+          <Modal.Body className="portfolio-modal">
+            <div className="portfolio-modal-content text-center w-100">
+              Thank you for contacting, I will answer as soon as possible! :)
             </div>
-          </div>
-          <div className="name text-center">Filip Królikowski</div>
-          <div className="d-flex justify-content-center mt-5">
-            <a href="#contact" className="text-decoration-none">
-              <button type="button" className="custom-btn">
-                hire me
-              </button>
-            </a>
-          </div>
+          </Modal.Body>
+          <Modal.Footer className="border-0 portfolio-modal"></Modal.Footer>
+        </Modal>
+        <div className={`side-nav d-flex flex-column ${showNav ? "show-side-nav" : "hide-side-nav"}`}>
+          <span className="close-btn ms-auto" onClick={() => setShowNav(false)}>
+            &#x2715;
+          </span>
+          {sections.map((section) => (
+            <div key={section.name} className="my-4 nav-link-container">
+              <a className="text-decoration-none side-nav-link" href={section.href} onClick={() => setShowNav(false)}>
+                {section.name}
+              </a>
+              <div className="side-nav-border"></div>
+            </div>
+          ))}
         </div>
-      </div>
-      <div id="about-me" className="section d-flex flex-column align-items-center py-5 my-5">
-        <div className="logo-container mt-4">
-          <img src={NeonLogo} alt="" className="logo" />
-        </div>
-        <div className="logo-text mt-2">
-          <span className="about">About</span>
-          <span className="me"> me</span>
-        </div>
-        <div className="about-title mt-5 text-center w-75 animated-element">
-          <span>front-end</span> developer
-        </div>
-        <div className="text-and-photo mt-5 align-items-center d-flex flex-column align-items-center">
-          <div className="photo-container my-5 animated-element">
-            <img src={Photo} alt="" className="photo" />
-          </div>
-          <div className="text mt-4 animated-element">
-            Hi, my name is Filip Królikowski. I'm a 24 years old, full of enthusiasm, self-taught coding, Junior Front
-            End Developer. Experienced in working in team. Highly skilled in HTML/CSS/JavaScript/React.js and working
-            knowledge of Photoshop and Gimp.
-            <div className="mt-3">
-              I started learning how to code in 2020, while studying National Security. After half year I really liked
-              it and I decided this is the thing I want to do for living and dropped out of university to have a full
-              time job.
+        <div className="header">
+          <div className="background-video-container d-none d-md-block"></div>
+          <div className="video-overlay"></div>
+          <div className={`text-container text-uppercase text-nowrap ${animateHeader ? "show-header" : "hide-header"}`}>
+            <div className="title">
+              front-end <br /> developer
+              <div className="small-title">
+                front end <br /> developer
+              </div>
+            </div>
+            <div className="name text-center">Filip Królikowski</div>
+            <div className="d-flex justify-content-center mt-5">
+              <a href="#contact" className="text-decoration-none">
+                <button type="button" className="custom-btn">
+                  hire me
+                </button>
+              </a>
             </div>
           </div>
         </div>
-      </div>
-      <div className="small-section d-flex flex-column justify-content-center text-center">
-        <div className="animated-element">creativity • passion • loyalty </div>
-        <div className="my-3 animated-element">high standards • self-taught • ambitious </div>
-        <div className="animated-element">enthusiasm for work • efficient • reliable </div>
-      </div>
-      <div id="my-projects" className="section d-flex flex-column align-items-center py-5">
-        <div className="section-title">my projects</div>
-        <div className="row mx-auto mt-3 mt-md-5">
-          {projects.map((item) => (
-            <SingleProject project={item} key={item.name} />
-          ))}
+        <div id="about-me" className="section d-flex flex-column align-items-center py-5 my-5">
+          <div className="logo-container mt-4">
+            <img src={NeonLogo} alt="" className="logo" />
+          </div>
+          <div className="logo-text mt-2">
+            <span className="about">About</span>
+            <span className="me"> me</span>
+          </div>
+          <div className="about-title mt-5 text-center w-75 animated-element">
+            <span>front-end</span> developer
+          </div>
+          <div className="text-and-photo mt-5 align-items-center d-flex flex-column align-items-center">
+            <div className="photo-container my-5 animated-element">
+              <img src={Photo} alt="" className="photo" />
+            </div>
+            <div className="text mt-4 animated-element">
+              Hi, my name is Filip Królikowski. I'm a 24 years old, full of enthusiasm, self-taught coding, Junior Front
+              End Developer. Experienced in working in team. Highly skilled in HTML/CSS/JavaScript/React.js and working
+              knowledge of Photoshop and Gimp.
+              <div className="mt-3">
+                I started learning how to code in 2020, while studying National Security. After half year I really liked
+                it and I decided this is the thing I want to do for living and dropped out of university to have a full
+                time job.
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div id="what-i-use" className="section d-flex flex-column align-items-center pb-5">
-        <div className="section-title">what i use</div>
-        <div className="tools-container mt-5">
-          {tools.map((tool) => (
-            <SingleTool tool={tool} key={tool.name} />
-          ))}
+        <div className="small-section d-flex flex-column justify-content-center text-center">
+          <div>creativity • passion • loyalty </div>
+          <div className="my-3">high standards • self-taught • ambitious </div>
+          <div>enthusiasm for work • efficient • reliable </div>
         </div>
-      </div>
-      <div id="contact" className="section mt-5 d-flex flex-column align-items-center pb-5">
-        <div className="section-title">Contact</div>
-        <form onSubmit={onSubmit} className="d-flex flex-column animated-element contact-form mt-4">
-          <label htmlFor="from_name">Name</label>
-          <input type="text" name="from_name" placeholder="Name" value={toSend.from_name} onChange={handleChange} />
-          <label htmlFor="reply_to">E-mail</label>
-          <input type="text" name="reply_to" placeholder="Your email" value={toSend.reply_to} onChange={handleChange} />
-          <label htmlFor="message">Message</label>
-          <textarea
-            type="text"
-            name="message"
-            placeholder="Your message"
-            className="message-input"
-            value={toSend.message}
-            onChange={handleChange}
-          />
+        <div id="my-projects" className="section d-flex flex-column align-items-center py-5">
+          <div className="section-title">my projects</div>
+          <div className="row mx-auto mt-3 mt-md-5">
+            {projects.map((item) => (
+              <SingleProject project={item} key={item.name} />
+            ))}
+          </div>
+        </div>
+        <div id="what-i-use" className="section d-flex flex-column align-items-center pb-5">
+          <div className="section-title">what i use</div>
+          <div className="tools-container mt-5">
+            {tools.map((tool) => (
+              <SingleTool tool={tool} key={tool.name} />
+            ))}
+          </div>
+        </div>
+        <div id="contact" className="section mt-5 d-flex flex-column align-items-center pb-5">
+          <div className="section-title">Contact</div>
+          <form onSubmit={onSubmit} className="d-flex flex-column contact-form mt-4">
+            <label htmlFor="from_name">Name</label>
+            <input type="text" name="from_name" placeholder="Name" value={toSend.from_name} onChange={handleChange} />
+            <label htmlFor="reply_to">E-mail</label>
+            <input
+              type="text"
+              name="reply_to"
+              placeholder="Your email"
+              value={toSend.reply_to}
+              onChange={handleChange}
+            />
+            <label htmlFor="message">Message</label>
+            <textarea
+              type="text"
+              name="message"
+              placeholder="Your message"
+              className="message-input"
+              value={toSend.message}
+              onChange={handleChange}
+            />
 
-          <button
-            className="custom-btn mt-3 w-50 mx-auto d-flex align-items-center justify-content-center"
-            type="submit"
-          >
-            {isLoading && <span className="loader me-3"></span>}
-            Submit
-          </button>
-        </form>
+            <button
+              className="custom-btn mt-3 w-50 mx-auto d-flex align-items-center justify-content-center"
+              type="submit"
+            >
+              {isLoading && <span className="loader me-3"></span>}
+              Submit
+            </button>
+          </form>
+        </div>
+        <div className="social-icons d-flex justify-content-center mt-4">
+          <a href="https://www.facebook.com/filip.krolikowski.391/" target="_blank" className="text-decoration-none">
+            <FacebookIcon className="social-icon" />
+          </a>
+          <a href="https://twitter.com/Filip44636126" target="_blank" className="text-decoration-none">
+            <TwitterIcon className="social-icon mx-5" />
+          </a>
+          <a href="https://www.instagram.com/fit_fifi97/" target="_blank" className="text-decoration-none">
+            <InstagramIcon className="social-icon" />
+          </a>
+        </div>
+        <div className="pb-4 footer text-center">
+          © 2022 <span>Filip Królikowski</span>
+        </div>
       </div>
-      <div className="social-icons d-flex justify-content-center mt-4 animated-element">
-        <a href="https://www.facebook.com/filip.krolikowski.391/" target="_blank" className="text-decoration-none">
-          <FacebookIcon className="social-icon" />
-        </a>
-        <a href="https://twitter.com/Filip44636126" target="_blank" className="text-decoration-none">
-          <TwitterIcon className="social-icon mx-5" />
-        </a>
-        <a href="https://www.instagram.com/fit_fifi97/" target="_blank" className="text-decoration-none">
-          <InstagramIcon className="social-icon" />
-        </a>
-      </div>
-      <div className="pb-4 footer text-center">
-        © 2022 <span>Filip Królikowski</span>
-      </div>
-    </div>
+    </>
   );
 }
 
