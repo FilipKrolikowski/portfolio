@@ -19,12 +19,14 @@ function SingleProject({ project }) {
               Live
             </button>
           </a>
-          <a href={project.code} target="_blank" className="text-decoration-none">
-            <button type="button" className="project-btn mx-3 d-flex align-items-center">
-              <GithubIcon className="btn-icon me-3" />
-              Code
-            </button>
-          </a>
+          {project.code && (
+            <a href={project.code} target="_blank" className="text-decoration-none">
+              <button type="button" className="project-btn mx-3 d-flex align-items-center">
+                <GithubIcon className="btn-icon me-3" />
+                Code
+              </button>
+            </a>
+          )}
         </div>
       </div>
     </div>

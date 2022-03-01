@@ -3,6 +3,7 @@ import Photo from "./images/photo.jpg";
 import NeonLogo from "./images/neon-logo.png";
 import Project1Image from "./images/project-1c.png";
 import Project2Image from "./images/project-2.png";
+import Project3Image from "./images/project-3b.png";
 import SingleProject from "./SingleProject";
 import html5Image from "./images/tools/html5.png";
 import jsImage from "./images/tools/js.png";
@@ -35,6 +36,13 @@ const projects = [
     image: Project2Image,
     live: "https://filipkrolikowski.github.io/todo-list-app/",
     code: "https://github.com/FilipKrolikowski/todo-list-app",
+  },
+  {
+    name: "Creator.menu",
+    desc: "Complex app to create beautiful web pages for user's restaurants, available to print menu cards and special event projects based on thousands designs and styles",
+    image: Project3Image,
+    live: "https://creator.menu/",
+    code: "",
   },
 ];
 
@@ -118,7 +126,7 @@ function App() {
         setIsLoading(false);
       })
       .catch((err) => {
-        console.log("FAILED...", err);
+        console.log(err);
       });
   };
 
@@ -267,6 +275,7 @@ function App() {
         </div>
         <div className="header">
           <div className="background-video-container d-none d-md-block"></div>
+          <div className="mobile-overlay d-block d-md-none"></div>
           <div className="video-overlay"></div>
           <div className={`text-container text-uppercase text-nowrap ${animateHeader ? "show-header" : "hide-header"}`}>
             <div className="title">
@@ -301,21 +310,33 @@ function App() {
               <img src={Photo} alt="" className="photo" />
             </div>
             <div className="text mt-4 animated-element">
-              Hi, my name is Filip Królikowski. I'm a 24 years old, full of enthusiasm, self-taught coding, Junior Front
-              End Developer. Experienced in working in team. Highly skilled in HTML/CSS/JavaScript/React.js and working
-              knowledge of Photoshop and Gimp.
+              Hi, my name is Filip Królikowski. I'm a 24 years old, full of enthusiasm, self-taught coding, Front End
+              Developer. Highly skilled in HTML/CSS/JavaScript/React.js and working knowledge of Photoshop and Gimp.
               <div className="mt-3">
                 I started learning how to code in 2020, while studying National Security. After half year I really liked
-                it and I decided this is the thing I want to do for living and dropped out of university to have a full
-                time job.
+                it and I decided that this is the thing I want to do for living and dropped out of university to have a
+                full time job.
+              </div>
+              <div className="mt-3">
+                Today I have almost 1.5 year of commercial experience building complex apps, working in team and I am
+                looking for new challenges!
               </div>
             </div>
           </div>
         </div>
         <div className="small-section d-flex flex-column justify-content-center text-center">
-          <div>creativity • passion • loyalty </div>
-          <div className="my-3">high standards • self-taught • ambitious </div>
-          <div>enthusiasm for work • efficient • reliable </div>
+          <div>
+            creativity <span className="d-none d-md-inline-block">•</span> passion{" "}
+            <span className="d-none d-md-inline-block">•</span> loyalty
+          </div>
+          <div className="my-3">
+            high standards <span className="d-none d-md-inline-block">•</span> self-taught{" "}
+            <span className="d-none d-md-inline-block">•</span> ambitious{" "}
+          </div>
+          <div>
+            enthusiasm for work <span className="d-none d-md-inline-block">•</span> efficient{" "}
+            <span className="d-none d-md-inline-block">•</span> reliable{" "}
+          </div>
         </div>
         <div id="my-projects" className="section d-flex flex-column align-items-center py-5">
           <div className="section-title">my projects</div>
@@ -337,10 +358,18 @@ function App() {
           <div className="section-title">Contact</div>
           <form onSubmit={onSubmit} className="d-flex flex-column contact-form mt-4">
             <label htmlFor="from_name">Name</label>
-            <input type="text" name="from_name" placeholder="Name" value={toSend.from_name} onChange={handleChange} />
+            <input
+              required
+              type="text"
+              name="from_name"
+              placeholder="Name"
+              value={toSend.from_name}
+              onChange={handleChange}
+            />
             <label htmlFor="reply_to">E-mail</label>
             <input
-              type="text"
+              required
+              type="email"
               name="reply_to"
               placeholder="Your email"
               value={toSend.reply_to}
@@ -348,6 +377,7 @@ function App() {
             />
             <label htmlFor="message">Message</label>
             <textarea
+              required
               type="text"
               name="message"
               placeholder="Your message"

@@ -71,12 +71,16 @@ body {
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
-    .background-video-container {
+    .background-video-container,
+    .mobile-overlay {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
+    }
+    .mobile-overlay {
+      background: rgba(209, 206, 164, 0.205);
     }
     .ball {
       position: absolute;
