@@ -1,5 +1,5 @@
 import "./App.scss";
-import Photo from "./images/photo.jpg";
+import Photo from "./images/photo2.jpg";
 import NeonLogo from "./images/neon-logo.png";
 import Project1Image from "./images/project-1c.png";
 import Project2Image from "./images/project-2.png";
@@ -13,6 +13,7 @@ import gitImage from "./images/tools/git.png";
 import npmImage from "./images/tools/npm.png";
 import reactImage from "./images/tools/react.png";
 import sassImage from "./images/tools/sass.png";
+import typescriptImage from "./images/tools/typescript.png";
 import SingleTool from "./SingleTool";
 import { send } from "emailjs-com";
 import { useState, useEffect } from "react";
@@ -62,6 +63,10 @@ const tools = [
   {
     name: "REACT",
     logo: reactImage,
+  },
+  {
+    name: "TYPESCRIPT",
+    logo: typescriptImage,
   },
   {
     name: "BOOTSTRAP",
@@ -205,6 +210,7 @@ function App() {
   };
 
   useEffect(() => {
+    document.body.style.overflowY = "hidden";
     balls();
     window.onload = () => {
       setIsContentLoaded(true);
@@ -255,7 +261,7 @@ function App() {
           <Modal.Header className="border-0 pb-0 portfolio-modal" closeButton></Modal.Header>
           <Modal.Body className="portfolio-modal">
             <div className="portfolio-modal-content text-center w-100">
-              Thank you for contacting, I will answer as soon as possible! :)
+              Thank you for contacting me, I will answer as soon as possible! :)
             </div>
           </Modal.Body>
           <Modal.Footer className="border-0 portfolio-modal"></Modal.Footer>
@@ -311,15 +317,16 @@ function App() {
             </div>
             <div className="text mt-4 animated-element">
               Hi, my name is Filip Królikowski. I'm a 24 years old, full of enthusiasm, self-taught coding, Front End
-              Developer. Highly skilled in HTML/CSS/JavaScript/React.js and working knowledge of Photoshop and Gimp.
+              Developer. Highly skilled in HTML/CSS/JavaScript/React and working knowledge of Typescript, Photoshop and
+              Gimp.
               <div className="mt-3">
                 I started learning how to code in 2020, while studying National Security. After half year I really liked
                 it and I decided that this is the thing I want to do for living and dropped out of university to have a
                 full time job.
               </div>
               <div className="mt-3">
-                Today I have almost 1.5 year of commercial experience building complex apps, working in team and I am
-                looking for new challenges!
+                Today I have 1.5 year of commercial experience building complex apps, working in team and I am looking
+                for new challenges!
               </div>
             </div>
           </div>
