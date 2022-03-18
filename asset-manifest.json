@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.b9cf9845.css",
-    "main.js": "/portfolio/static/js/main.c0510670.js",
+    "main.css": "/portfolio/static/css/main.6d64bda8.css",
+    "main.js": "/portfolio/static/js/main.30079065.js",
     "static/media/neon-logo.png": "/portfolio/static/media/neon-logo.5532893fd8b818c62f56.png",
     "static/media/project-1c.png": "/portfolio/static/media/project-1c.7677c769bb8395b23043.png",
     "static/media/project-3b.png": "/portfolio/static/media/project-3b.646eecd76dfd3dda5cff.png",
@@ -10,19 +10,19 @@
     "static/media/project-2.png": "/portfolio/static/media/project-2.ab292614a92618bf5b6a.png",
     "static/media/html5.png": "/portfolio/static/media/html5.d160408ca293b4094341.png",
     "static/media/sass.png": "/portfolio/static/media/sass.35ae73ae4a74e25a3a20.png",
-    "static/media/photo.jpg": "/portfolio/static/media/photo.d100feeb4ccd409c33cd.jpg",
     "static/media/react.png": "/portfolio/static/media/react.6934c76142e53a706c4d.png",
     "static/media/js.png": "/portfolio/static/media/js.d4352330e50b310fa0f9.png",
     "static/media/bootstrap.png": "/portfolio/static/media/bootstrap.d5210cdeab1bc94309c4.png",
+    "static/media/photo2.jpg": "/portfolio/static/media/photo2.6cfbfd67f8770f148928.jpg",
     "static/media/gimp.png": "/portfolio/static/media/gimp.8d5d189bb9edecafa7e1.png",
     "static/media/npm.png": "/portfolio/static/media/npm.5904c46fdce9a3192c3b.png",
     "index.html": "/portfolio/index.html",
     "static/media/hamburger.svg": "/portfolio/static/media/hamburger.0de5cdd917f897cd032193860d269e78.svg",
-    "main.b9cf9845.css.map": "/portfolio/static/css/main.b9cf9845.css.map",
-    "main.c0510670.js.map": "/portfolio/static/js/main.c0510670.js.map"
+    "main.6d64bda8.css.map": "/portfolio/static/css/main.6d64bda8.css.map",
+    "main.30079065.js.map": "/portfolio/static/js/main.30079065.js.map"
   },
   "entrypoints": [
-    "static/css/main.b9cf9845.css",
-    "static/js/main.c0510670.js"
+    "static/css/main.6d64bda8.css",
+    "static/js/main.30079065.js"
   ]
 }
