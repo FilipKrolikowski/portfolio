@@ -1,4 +1,4 @@
-import "./SingleTool.scss";
+import "../scss/SingleTool.scss";
 
 function SingleTool({ tool }) {
   return (

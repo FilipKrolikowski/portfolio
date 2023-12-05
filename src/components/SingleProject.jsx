@@ -1,6 +1,6 @@
-import "./SingleProject.scss";
-import GithubIcon from "./images/githubIcon";
-import WwwIcon from "./images/wwwIcon";
+import "../scss/SingleProject.scss";
+import GithubIcon from "../images/githubIcon";
+import WwwIcon from "../images/wwwIcon";
 
 function SingleProject({ project }) {
   return (

@@ -1,11 +1,13 @@
-import "./App.scss";
+import "./scss/App.scss";
 import Photo from "./images/photo2.jpg";
 import NeonLogo from "./images/neon-logo.png";
 import Project1Image from "./images/project-1c.png";
 import Project2Image from "./images/project-2.png";
 import Project3Image from "./images/project-3b.png";
-import SingleProject from "./SingleProject";
+import Project4Image from "./images/project-4.png";
+import SingleProject from "./components/SingleProject";
 import html5Image from "./images/tools/html5.png";
+import tailwindcssImage from "./images/tools/tailwindcss.png";
 import jsImage from "./images/tools/js.png";
 import bootstrapImage from "./images/tools/bootstrap.png";
 import gimpImage from "./images/tools/gimp.png";
@@ -14,7 +16,8 @@ import npmImage from "./images/tools/npm.png";
 import reactImage from "./images/tools/react.png";
 import sassImage from "./images/tools/sass.png";
 import typescriptImage from "./images/tools/typescript.png";
-import SingleTool from "./SingleTool";
+import nextjsImage from "./images/tools/nextjs.png";
+import SingleTool from "./components/SingleTool";
 import { send } from "emailjs-com";
 import { useState, useEffect } from "react";
 import { Modal } from "react-bootstrap";
@@ -43,6 +46,13 @@ const projects = [
     desc: "Complex app to create beautiful web pages for user's restaurants, available to print menu cards and special event projects based on thousands designs and styles",
     image: Project3Image,
     live: "https://creator.menu/",
+    code: "",
+  },
+  {
+    name: "Eduranga",
+    desc: "E-learning platform designed for teachers, students and their parents to create homeworks, tests, exams etc. Use and pass them by students and keep track by parents.",
+    image: Project4Image,
+    live: "https://eduranga.pl/",
     code: "",
   },
 ];
@@ -84,6 +94,14 @@ const tools = [
     name: "GIMP",
     logo: gimpImage,
   },
+  {
+    name: "NEXTJS",
+    logo: nextjsImage,
+  },
+  {
+    name: "TAILWINDCSS",
+    logo: tailwindcssImage,
+  },
 ];
 
 const sections = [
@@ -120,7 +138,7 @@ function App() {
   const onSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    send("service_6eht945", "template_ni2rimf", toSend, "OUXhlS0hyXbd98Ype")
+    send("service_0yvuiqh", "template_ni2rimf", toSend, "OUXhlS0hyXbd98Ype")
       .then(() => {
         setToSend({
           from_name: "",
@@ -305,8 +323,8 @@ function App() {
             <img src={NeonLogo} alt="" className="logo" />
           </div>
           <div className="logo-text mt-2">
-            {/* <span className="about">About</span>
-            <span className="me"> me</span> */}
+            <span className="about">About</span>
+            <span className="me"> me</span>
           </div>
           <div className="about-title mt-5 text-center w-75 animated-element">
             <span>front-end</span> developer
@@ -316,17 +334,17 @@ function App() {
               <img src={Photo} alt="" className="photo" />
             </div>
             <div className="text mt-4 animated-element">
-              Hi, my name is Filip Królikowski. I'm a 24 years old, full of enthusiasm, self-taught coding, Front End
+              Hi, my name is Filip Królikowski. I'm a 26 years old, full of enthusiasm, self-taught coding, Front End
               Developer. Highly skilled in HTML/CSS/JavaScript/React and working knowledge of Typescript, Photoshop and
               Gimp.
               <div className="mt-3">
                 I started learning how to code in 2020, while studying National Security. After half year I really liked
-                it and I decided that this is the thing I want to do for living and dropped out of university to have a
-                full time job.
+                it and I decided that this is the thing I want to do for living, so I dropped out of university to have
+                a full time job.
               </div>
               <div className="mt-3">
-                Today I have 1.5 year of commercial experience building complex apps, working in team and I am looking
-                for new challenges!
+                Today I have over 3 years of commercial experience building complex apps, working in teams and I am
+                looking for new challenges!
               </div>
             </div>
           </div>
@@ -414,7 +432,7 @@ function App() {
           </a>
         </div>
         <div className="pb-4 footer text-center">
-          © 2022 <span>Filip Królikowski</span>
+          © 2023 <span>Filip Królikowski</span>
         </div>
       </div>
     </>
