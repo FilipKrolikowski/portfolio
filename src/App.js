@@ -305,8 +305,8 @@ function App() {
             <img src={NeonLogo} alt="" className="logo" />
           </div>
           <div className="logo-text mt-2">
-            <span className="about">About</span>
-            <span className="me"> me</span>
+            {/* <span className="about">About</span>
+            <span className="me"> me</span> */}
           </div>
           <div className="about-title mt-5 text-center w-75 animated-element">
             <span>front-end</span> developer
