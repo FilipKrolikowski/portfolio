@@ -1,6 +1,6 @@
 .single-project {
   .project-image-container {
-    width: 400px;
+    width: 450px;
     height: 300px;
     position: relative;
     @media only screen and (max-width: 575px) {
@@ -19,7 +19,6 @@
       left: 0;
       bottom: 0;
       right: 0;
-      background: linear-gradient(90deg, rgba(246, 77, 255, 0.5) 0%, rgba(3, 143, 171, 0.377) 100%);
       border-radius: 15px;
     }
   }

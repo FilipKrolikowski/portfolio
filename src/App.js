@@ -4,7 +4,9 @@ import NeonLogo from "./images/neon-logo.png";
 import Project1Image from "./images/project-1c.png";
 import Project2Image from "./images/project-2.png";
 import Project3Image from "./images/project-3b.png";
-import Project4Image from "./images/project-4.png";
+import Project4Image from "./images/Capture.PNG";
+import Project5Image from "./images/project-5.PNG";
+import Project6Image from "./images/project-6.PNG";
 import SingleProject from "./components/SingleProject";
 import html5Image from "./images/tools/html5.png";
 import tailwindcssImage from "./images/tools/tailwindcss.png";
@@ -18,6 +20,11 @@ import sassImage from "./images/tools/sass.png";
 import typescriptImage from "./images/tools/typescript.png";
 import nextjsImage from "./images/tools/nextjs.png";
 import SingleTool from "./components/SingleTool";
+import reduxImage from "./images/tools/redux.png";
+import figmaImage from "./images/tools/figma.png";
+import adobexdImage from "./images/tools/adobexd.png";
+import reactqueryImage from "./images/tools/reactquery.png";
+import reacttestingImage from "./images/tools/reacttesting.png";
 import { send } from "emailjs-com";
 import { useState, useEffect } from "react";
 import { Modal } from "react-bootstrap";
@@ -29,28 +36,35 @@ import hamburgerIcon from "./images/hamburger.svg";
 const projects = [
   {
     name: "Fifi Store",
-    desc: "Single page app of a store with clothes made with HTML5, SCSS, JS",
+    desc: "Simple app of a store with clothes made with React",
     image: Project1Image,
     live: "https://fifi-store.netlify.app/",
     code: "https://github.com/FilipKrolikowski/fifi-store",
   },
   {
-    name: "Todo App",
-    desc: "Simple app to create your to-do list",
-    image: Project2Image,
-    live: "https://filipkrolikowski.github.io/todo-list-app/",
-    code: "https://github.com/FilipKrolikowski/todo-list-app",
+    name: "Car rent app (Work in progress)",
+    desc: "Application for searching and renting any car. Made with React, Typescript, Next.js and TailwindCSS",
+    image: Project5Image,
+    live: "https://car-rent-app-m6st.vercel.app/",
+    code: "https://github.com/FilipKrolikowski/car-rent-app",
+  },
+  {
+    name: "Search games app",
+    desc: "Application for searching any video game in the world. Made with React and Redux",
+    image: Project6Image,
+    live: "https://game-search-app.vercel.app/",
+    code: "https://github.com/FilipKrolikowski/game-search-app",
   },
   {
     name: "Creator.menu",
     desc: "Complex app to create beautiful web pages for user's restaurants, available to print menu cards and special event projects based on thousands designs and styles",
     image: Project3Image,
-    live: "https://creator.menu/",
+    live: "https://creator.menu/app/online-menu",
     code: "",
   },
   {
     name: "Eduranga",
-    desc: "E-learning platform designed for teachers, students and their parents to create homeworks, tests, exams etc. Use and pass them by students and keep track by parents.",
+    desc: "E-learning platform designed for teachers, students and their parents to create homeworks, tests, exams etc.",
     image: Project4Image,
     live: "https://eduranga.pl/",
     code: "",
@@ -79,6 +93,26 @@ const tools = [
     logo: typescriptImage,
   },
   {
+    name: "REDUX",
+    logo: reduxImage,
+  },
+  {
+    name: "NEXTJS",
+    logo: nextjsImage,
+  },
+  {
+    name: "TAILWINDCSS",
+    logo: tailwindcssImage,
+  },
+  {
+    name: "REACT QUERY",
+    logo: reactqueryImage,
+  },
+  {
+    name: "REACT TESTING LIBRARY",
+    logo: reacttestingImage,
+  },
+  {
     name: "BOOTSTRAP",
     logo: bootstrapImage,
   },
@@ -91,16 +125,16 @@ const tools = [
     logo: npmImage,
   },
   {
+    name: "FIGMA",
+    logo: figmaImage,
+  },
+  {
+    name: "ADOBE XD",
+    logo: adobexdImage,
+  },
+  {
     name: "GIMP",
     logo: gimpImage,
-  },
-  {
-    name: "NEXTJS",
-    logo: nextjsImage,
-  },
-  {
-    name: "TAILWINDCSS",
-    logo: tailwindcssImage,
   },
 ];
 
@@ -334,16 +368,16 @@ function App() {
               <img src={Photo} alt="" className="photo" />
             </div>
             <div className="text mt-4 animated-element">
-              Hi, my name is Filip Królikowski. I'm a 26 years old, full of enthusiasm, self-taught coding, Front End
-              Developer. Highly skilled in HTML/CSS/JavaScript/React and working knowledge of Typescript, Photoshop and
-              Gimp.
+              Hi, my name is Filip Królikowski. I'm a 27 years old, full of enthusiasm, self-taught coding, Front End
+              Developer. Highly skilled in HTML, CSS, JavaScript, React, Typescript and Next.js where I coded dozens of
+              applications.
               <div className="mt-3">
                 I started learning how to code in 2020, while studying National Security. After half year I really liked
                 it and I decided that this is the thing I want to do for living, so I dropped out of university to have
                 a full time job.
               </div>
               <div className="mt-3">
-                Today I have over 3 years of commercial experience building complex apps, working in teams and I am
+                Today I have over 3.5 years of commercial experience building complex apps, working in teams and I am
                 looking for new challenges!
               </div>
             </div>
@@ -432,7 +466,7 @@ function App() {
           </a>
         </div>
         <div className="pb-4 footer text-center">
-          © 2023 <span>Filip Królikowski</span>
+          © 2025 <span>Filip Królikowski</span>
         </div>
       </div>
     </>
